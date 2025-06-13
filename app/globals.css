@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 95 15% 94%;
+    --foreground: 222.2 40% 12%;
+    --card: 95 20% 97%;
+    --card-foreground: 222.2 40% 12%;
+    --popover: 95 20% 97%;
+    --popover-foreground: 222.2 40% 12%;
+    --primary: 95 70% 25%; /* #2D703D - Soft dark green */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 95 25% 85%; /* Light version of primary */
+    --secondary-foreground: 95 70% 25%;
+    --muted: 95 15% 88%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 95 35% 90%;
+    --accent-foreground: 95 70% 25%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 95 20% 80%;
+    --input: 95 20% 80%;
+    --ring: 95 70% 25%;
+    --radius: 0.75rem;
+    --chart-1: 95 60% 45%;
+    --chart-2: 173 55% 35%;
+    --chart-3: 197 35% 28%;
+    --chart-4: 43 60% 60%;
+    --chart-5: 27 80% 58%;
+
+    /* Custom color palette */
+    --forest-green: 95 70% 25%; /* #2D703D */
+    --leaf-green: 95 60% 35%; /* #4F9E1D (diperhalus) */
+    --lime-green: 75 45% 58%; /* #B3CD62 */
+    --mint-green: 75 55% 80%; /* #D7EDAA */
+    --sage-yellow: 55 40% 55%; /* #D1C755 */
+  }
+
+  .dark {
+    --background: 95 50% 3%;
+    --foreground: 95 20% 98%;
+    --card: 95 50% 4%;
+    --card-foreground: 95 20% 98%;
+    --popover: 95 50% 4%;
+    --popover-foreground: 95 20% 98%;
+    --primary: 95 67% 50%;
+    --primary-foreground: 95 50% 3%;
+    --secondary: 95 30% 10%;
+    --secondary-foreground: 95 20% 98%;
+    --muted: 95 30% 10%;
+    --muted-foreground: 95 20% 65%;
+    --accent: 95 30% 12%;
+    --accent-foreground: 95 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 95 20% 98%;
+    --border: 95 30% 12%;
+    --input: 95 30% 12%;
+    --ring: 95 67% 50%;
+    --chart-1: 95 70% 50%;
+    --chart-2: 173 60% 45%;
+    --chart-3: 197 80% 55%;
+    --chart-4: 43 65% 60%;
+    --chart-5: 27 75% 55%;
+  }
+}
