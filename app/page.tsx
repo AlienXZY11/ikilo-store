@@ -131,7 +131,7 @@ export default function Home() {
   }
 
   const handleSearchClick = () => {
-    router.push("/categories")
+    router.push(`/categories?search=${searchQuery}`)
   }
 
   // Filter products by category and search query
@@ -171,64 +171,65 @@ export default function Home() {
       )}
 
       {/* Compact Header */}
-      <header className="bg-gradient-to-r from-forest-green to-leaf-green text-white shadow-lg sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
-            <div className="flex items-center space-x-3">
-              <div className="bg-white/20 p-1.5 rounded-lg">
-                <Store className="h-5 w-5" />
-              </div>
-              <h1 className="text-lg font-bold">iKILO</h1>
-              <div className="flex items-center space-x-2">
-                {process.env.NEXT_PUBLIC_CUSTOMER_MODE !== "true" && (
-                  <>
-                    <Badge variant="secondary" className="text-xs bg-blue-500 text-white flex items-center gap-1">
-                      <Database className="h-3 w-3" />
-                      KATALOG
-                    </Badge>
-                    {dataSource === "mock" && (
-                      <Badge variant="secondary" className="text-xs bg-yellow-500 text-white">
-                        DEMO
-                      </Badge>
-                    )}
-                  </>
-                )}
-                {!isOnline && (
-                  <Badge variant="secondary" className="text-xs bg-red-500 text-white flex items-center gap-1">
-                    <WifiOff className="h-3 w-3" />
-                    OFFLINE
-                  </Badge>
-                )}
-                {isOnline && dataSource === "firebase" && process.env.NEXT_PUBLIC_CUSTOMER_MODE !== "true" && (
-                  <Badge variant="secondary" className="text-xs bg-green-500 text-white flex items-center gap-1">
-                    <Wifi className="h-3 w-3" />
-                    ONLINE
-                  </Badge>
-                )}
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <ThemeToggle />
-              {/* Desktop Cart Button */}
-              <Button
-                onClick={() => setShowCart(true)}
-                variant="ghost"
-                size="sm"
-                className="hidden md:flex relative text-white hover:bg-white/20 rounded-lg"
-              >
-                <ShoppingCart className="h-4 w-4 mr-1" />
-                <span className="hidden sm:inline text-sm">Keranjang</span>
-                {cartItemsCount > 0 && (
-                  <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 flex items-center justify-center text-xs bg-red-500 text-white">
-                    {cartItemsCount}
-                  </Badge>
-                )}
-              </Button>
-            </div>
-          </div>
+     <header className="bg-[hsl(var(--leaf-green))] text-white shadow-lg sticky top-0 z-40">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-between h-14">
+      <div className="flex items-center space-x-3">
+        <div className="bg-white/20 p-1.5 rounded-lg">
+          <Store className="h-5 w-5" />
         </div>
-      </header>
+        <h1 className="text-2xl font-bold">iKILO</h1>
+        <div className="flex items-center space-x-2">
+          {process.env.NEXT_PUBLIC_CUSTOMER_MODE !== "true" && (
+            <>
+              <Badge variant="secondary" className="text-xs bg-blue-500 text-white flex items-center gap-1">
+                <Database className="h-3 w-3" />
+                KATALOG
+              </Badge>
+              {dataSource === "mock" && (
+                <Badge variant="secondary" className="text-xs bg-yellow-500 text-white">
+                  DEMO
+                </Badge>
+              )}
+            </>
+          )}
+          {!isOnline && (
+            <Badge variant="secondary" className="text-xs bg-red-500 text-white flex items-center gap-1">
+              <WifiOff className="h-3 w-3" />
+              OFFLINE
+            </Badge>
+          )}
+          {isOnline && dataSource === "firebase" && process.env.NEXT_PUBLIC_CUSTOMER_MODE !== "true" && (
+            <Badge variant="secondary" className="text-xs bg-green-600 text-white flex items-center gap-1">
+              <Wifi className="h-3 w-3" />
+              ONLINE
+            </Badge>
+          )}
+        </div>
+      </div>
+
+      <div className="flex items-center space-x-2">
+        <ThemeToggle />
+        <Button
+          onClick={() => setShowCart(true)}
+          variant="ghost"
+          size="sm"
+          className="hidden md:flex relative text-white hover:bg-white/20 rounded-lg"
+        >
+          <ShoppingCart className="h-4 w-4 mr-1" />
+          <span className="hidden sm:inline text-sm">Keranjang</span>
+          {cartItemsCount > 0 && (
+            <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 flex items-center justify-center text-xs bg-red-500 text-white">
+              {cartItemsCount}
+            </Badge>
+          )}
+        </Button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
 
       {/* Error Alert */}
       {error && (

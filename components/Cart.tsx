@@ -79,9 +79,9 @@ export default function Cart({ isOpen, onClose, cartItems, onUpdateItem, onRemov
     message += `Tanggal: ${orderDate}\n\n`
 
     message += `INFORMASI PELANGGAN\n`
-    message += `• Nama: ${customerName}\n`
-    message += `• Telepon: ${customerPhone}\n`
-    message += `• Alamat: ${customerAddress}\n\n`
+    message += `• Nama     : ${customerName}\n`
+    message += `• Telepon  : ${customerPhone}\n`
+    message += `• Alamat   : ${customerAddress}\n\n`
 
     message += `DETAIL PESANAN\n`
     cartItems.forEach((item, index) => {
@@ -138,13 +138,14 @@ export default function Cart({ isOpen, onClose, cartItems, onUpdateItem, onRemov
             <h2 className="text-lg font-semibold text-gray-900">Keranjang Belanja</h2>
           </div>
           <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClose}
-            className="h-8 w-8 p-0 text-red-500 hover:text-red-700 hover:bg-red-50"
-          >
-           
+           variant="ghost"
+           size="sm"
+           onClick={onClose}
+             className="h-8 w-8 p-0 text-red-500 hover:text-red-700 hover:bg-red-50"
+            >
+            <X className="h-5 w-5" />
           </Button>
+
         </div>
 
         <div className="p-4">
@@ -268,7 +269,7 @@ export default function Cart({ isOpen, onClose, cartItems, onUpdateItem, onRemov
               {!showCheckout ? (
                 <Button
                   onClick={() => setShowCheckout(true)}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-6 rounded-xl font-medium"
+                  className="w-full btn-primary w-full text-lg py-6 flex justify-center items-center gap-2"
                   size="lg"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />

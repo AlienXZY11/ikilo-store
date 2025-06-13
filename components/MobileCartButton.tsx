@@ -35,11 +35,11 @@ export default function MobileCartButton({ cartItems, onOpenCart }: MobileCartBu
   if (cartItemsCount === 0) return null
 
   return (
-    <div className="md:hidden fixed bottom-20 left-4 right-4 z-40">
+    <div className="md:hidden fixed bottom-20 left-2 right-2 z-40">
       <div className="relative">
         <Button
           onClick={onOpenCart}
-          className="w-full bg-green-600 hover:bg-green-700 text-white shadow-lg border-0 h-14 px-4"
+          className="w-full bg-[hsl(var(--leaf-green))] text-white shadow-lg sticky border-0 h-14 px-4"
           style={{
             borderRadius: "9999px 9999px 9999px 9999px",
           }}

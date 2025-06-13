@@ -58,9 +58,9 @@ export default function ProductVariantDialog({ product, isOpen, onClose, onAddTo
         {/* Custom Close Button - Always Visible */}
         <button
           onClick={handleClose}
-          className="absolute right-4 top-4 z-50 bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition-colors shadow-md"
+          className="absolute right-4 top-4 z-50 bg-lime-green/30 hover:bg-lime-green/50 rounded-full p-2 transition-colors shadow-md"
         >
-          <X className="h-4 w-4 text-gray-600" />
+          <X className="h-4 w-4 text-forest-green" />
         </button>
 
         <DialogHeader className="pb-4">
@@ -95,9 +95,9 @@ export default function ProductVariantDialog({ product, isOpen, onClose, onAddTo
                 <button
                   key={variation.name}
                   onClick={() => setSelectedVariation(variation.name)}
-                  className={`p-4 rounded-xl border-2 text-left transition-all duration-200 ${
+                  className={`p-2 rounded-xl border-2 text-left transition-all duration-200 ${
                     selectedVariation === variation.name
-                      ? "border-forest-green bg-gradient-to-r from-lime-green/20 to-mint-green/20 shadow-md"
+                      ? "border-forest-green bg-gradient-to-r from-lime-green to-mint-green shadow-md"
                       : "border-gray-200 hover:border-leaf-green hover:bg-gray-50"
                   }`}
                 >
